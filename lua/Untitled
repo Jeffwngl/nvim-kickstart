@@ -1,0 +1,2 @@
+ls ~/.config/nvim-kickstart/lua/plugins | grep tree
+

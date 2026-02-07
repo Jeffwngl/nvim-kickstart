@@ -72,3 +72,13 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- NEW OPTIONS
+vim.opt.termguicolors = true
+
+vim.opt.ignorecase = true
+
+-- Open Neo-tree
+vim.keymap.set('n', '<leader>t', ':Neotree reveal<CR>', { desc = 'Reveal current file in Neo-tree' })
+-- Close Neo-tree
+vim.keymap.set('n', '<leader>c', ':Neotree close<CR>', { desc = 'Close Neo-tree' })

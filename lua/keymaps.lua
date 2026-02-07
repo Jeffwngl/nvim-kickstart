@@ -52,3 +52,23 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- NEW OPTIONS
+-- Delete without yanking
+vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', 'd', '"_d', { noremap = true, silent = true })
+
+-- incremental selection
+vim.keymap.set("n", "<A-S-Right>", "viw", { noremap = true })
+vim.keymap.set("v", "<A-S-Right>", "w",   { noremap = true })
+
+vim.keymap.set("v", "<A-S-Left>", "b",    { noremap = true })
+
+-- Increase indent
+vim.keymap.set("v", "<C-]>", ">gv", { noremap = true, silent = true })
+
+-- Decrease indent
+vim.keymap.set("v", "<C-[>", "<gv", { noremap = true, silent = true })
+
+-- Quick search & replace word under cursor
+vim.keymap.set("n", "<Leader>s", ":%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>", { noremap = true })
