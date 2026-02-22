@@ -29,6 +29,14 @@ return {
           -- },
         },
         opts = {},
+        -- luasnip templates
+        config = function()
+          local luasnip = require 'luasnip'
+          -- Load your custom LuaSnip snippets folder
+          require('luasnip.loaders.from_lua').lazy_load {
+            paths = { vim.fn.stdpath 'config' .. '/lua/snippets' },
+          }
+        end,
       },
       'folke/lazydev.nvim',
     },
@@ -58,6 +66,10 @@ return {
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         preset = 'default',
+
+        ['<Tab>'] = { 'select_next', 'fallback' },
+        ['<Up>'] = { 'select_prev', 'fallback' },
+        ['<Enter>'] = { 'select_and_accept', 'fallback' },
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps

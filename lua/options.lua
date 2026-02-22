@@ -82,3 +82,9 @@ vim.opt.ignorecase = true
 vim.keymap.set('n', '<leader>t', ':Neotree reveal<CR>', { desc = 'Reveal current file in Neo-tree' })
 -- Close Neo-tree
 vim.keymap.set('n', '<leader>c', ':Neotree close<CR>', { desc = 'Close Neo-tree' })
+
+-- Indentation
+vim.opt.tabstop = 4 -- Number of spaces a <Tab> counts for
+vim.opt.shiftwidth = 4 -- Number of spaces to use for each autoindent step
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.smarttab = true -- Make tab/backspace smarter
