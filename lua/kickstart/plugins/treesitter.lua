@@ -16,7 +16,16 @@ return {
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         -- additional_vim_regex_highlighting = { 'ruby' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = true, disable = { 'ruby', 'c', 'cpp' } },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = '<C-n>',
+          node_incremental = '<C-n>',
+          node_decremental = '<bs>',
+          scope_incremental = '<C-r>',
+        },
+      },
     },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:

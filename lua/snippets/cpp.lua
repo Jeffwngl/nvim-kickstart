@@ -4,12 +4,14 @@ local t = ls.text_node
 local i = ls.insert_node
 
 return {
-  -- cp
+  -- cpp
   s({ trig = 'cpp', snippetType = 'snippet' }, {
     t {
       '#include <iostream>',
       '',
       'using namespace std;',
+      '',
+      'typedef long long ll;',
       '',
       'int main() {',
       '    ios::sync_with_stdio(false);',
@@ -34,7 +36,7 @@ return {
     t ';',
   }),
 
-  -- for
+  -- fori
   s('fori', {
     t 'for (int ',
     i(1, 'i'),
@@ -42,11 +44,30 @@ return {
     i(1, 'i'),
     t ' < ',
     i(2, 'n'),
-    t '; ',
+    t '; ++',
     i(1, 'i'),
-    t '++) {',
+    t ') {',
     t { '', '    ' },
     i(3),
     t { '', '}' },
+  }),
+
+  -- Linked List Node snippet
+  s('llnode', {
+    t { 'struct Node {', '\tint data;' },
+    t { '', '\tNode* next;' },
+    t { '', '\tNode(int val) : data(val), next(nullptr) {}' },
+    t { '', '};' },
+    i(0),
+  }),
+
+  -- Binary Search Tree Node snippet
+  s('bstnode', {
+    t { 'struct TreeNode {', '\tint val;' },
+    t { '', '\tTreeNode* left;' },
+    t { '', '\tTreeNode* right;' },
+    t { '', '\tTreeNode(int value) : val(value), left(nullptr), right(nullptr) {}' },
+    t { '', '};' },
+    i(0),
   }),
 }
