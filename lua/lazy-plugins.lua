@@ -37,7 +37,13 @@ require('lazy').setup({
 
   -- require 'kickstart.plugins.tokyonight',
 
-  require 'kickstart.plugins.gruvbox',
+  -- require 'kickstart.plugins.gruvbox',
+
+  -- require 'kickstart.plugins.mariana',
+
+  -- require 'kickstart.plugins.kanagawa',
+
+  require 'kickstart.plugins.oxocarbon',
 
   require 'kickstart.plugins.todo-comments',
 
