@@ -76,8 +76,6 @@ vim.o.confirm = true
 -- NEW OPTIONS
 vim.opt.termguicolors = true
 
-vim.opt.ignorecase = true
-
 -- Open Neo-tree
 vim.keymap.set('n', '<leader>t', ':Neotree reveal<CR>', { desc = 'Reveal current file in Neo-tree' })
 -- Close Neo-tree
@@ -90,4 +88,11 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.smarttab = true -- Make tab/backspace smarter
 
 -- C++ / C indentation tweaks
--- vim.api.nvim_set_keymap('v', 'C-_', ':s/^/\\/\\/ /<CR>', { noremap = true, silent = true })
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Indent C/C++ arguments one level and align closing parentheses',
+  group = vim.api.nvim_create_augroup('kickstart-c-indent', { clear = true }),
+  pattern = { 'c', 'cpp' },
+  callback = function()
+    vim.opt_local.cinoptions:append { '(s', 'm1' }
+  end,
+})
